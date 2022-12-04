@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import colors from "../../utils/colors";
 
 export const styles = StyleSheet.create({
     container: {
@@ -8,35 +9,24 @@ export const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
-        color: '#212121',
+        color: colors.text,
         textAlign: 'center',
         paddingVertical: 20,
     },
     label: {
         fontSize: 15,
-        color: '#212121',
+        color: colors.text,
         paddingVertical:5,
         textAlign: 'center',
     },
     inputcontainer: {
-        backgroundColor: '#ffffff',
         justifyContent: 'center',
         alignItems: 'center',
-        marginHorizontal: 20,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-
-        elevation: 5, 
+        marginHorizontal: 20, 
+        paddingVertical: 20,
     },
     input: {
         width: '100%',
-        borderbottomcolor: '#A7BED3',
-        borderBottomWidth: 1,
         minWidth: 70,
         fontSize: 22,
         paddingVertical: 10,
@@ -46,9 +36,24 @@ export const styles = StyleSheet.create({
     buttonContainer: {
         flexDirection: 'row',
         width: '80%',
-        justifyContent: 'space-around',
+        justifyContent: 'space-evenly',
         marginTop: 20,
+
     },
+
+    confirmedContainer: {
+        width: '74%',
+        height: 180,
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        marginVertical: 20,
+        paddingBottom: 10,
+        
+    },
+
+    confirmedTitle: {
+        fontSize: 16
+    }
        
         
     
