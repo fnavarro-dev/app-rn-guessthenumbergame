@@ -11,8 +11,8 @@ export const styles = StyleSheet.create({
     },
 
     titleheader: {
-        fontSize: 22,
-        color: 'white',
-
+        fontSize: 20,
+        color: '#ffffff',
+        fontFamily: 'Lato-Regular',
     }
 });
