@@ -3,7 +3,7 @@
     "name": "mijuego",
     "slug": "mijuego",
     "version": "1.0.0",
-    "orientation": "portrait",
+    // "orientation": "landscape", //comentada queda responsive con ambas
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {

@@ -10,8 +10,8 @@ export const styles = StyleSheet.create({
     },
     content: {
         width: '80%',
-        height: height * 0.23,
-        minHeight: 200,
+        height: height * 0.22, //aquí el dimensions si funca
+        minHeight: 200, //esto en pantalla chica dpp impide que se vea muy chico con la propiedad de arriba
         alignItems: 'center',
         justifyContent: 'space-around',
     },

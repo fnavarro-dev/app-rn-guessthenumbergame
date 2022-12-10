@@ -1,7 +1,12 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import colors from "../../utils/colors";
 
+const { height, width } = Dimensions.get('window');
+
 export const styles = StyleSheet.create({
+    containerScroll: {
+        flex: 1, //necesito el flex: 1 o sino no se ve nada
+    },
     container: {
         flex: 1,
         alignItems: "center",
@@ -19,14 +24,20 @@ export const styles = StyleSheet.create({
         paddingVertical:5,
         textAlign: 'center',
     },
+    
+    
     inputcontainer: {
+        width: '80%',
         justifyContent: 'center',
         alignItems: 'center',
         marginHorizontal: 20, 
         paddingVertical: 20,
+        minHeight: 200,
+        //height: height * 0.3, // comentado porque en landscape da error
+        
     },
     input: {
-        width: '100%',
+        width: '20%',
         minWidth: 70,
         fontSize: 22,
         paddingVertical: 10,

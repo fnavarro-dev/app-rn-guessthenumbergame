@@ -21,7 +21,7 @@ const GameScreen = ({selectedNumber, onGameOver}) => {
     const [currentGuess, setCurrentGuess] = useState(generateRandomNumber(1, 100, selectedNumber));
     const [rounds, setRound] = useState(0);
 
-    const currentLow = useRef(1);
+    const currentLow = useRef(1); //se usa referencia porque después al poner mayor o menor se ocupará otro valor para hacer numero aletorio
     const currentHigh = useRef(100);
 
     const onHandleNextGuess = (direction) => {
@@ -33,20 +33,20 @@ const GameScreen = ({selectedNumber, onGameOver}) => {
             return;
         }
         if(direction === 'lower') {
-            currentHigh.current = currentGuess;
+            currentHigh.current = currentGuess; //el current es 100 antes de esta funcion, después el current hight sera el input del jugador IA y yo tengo que presionar lower
         } else {
             currentLow.current = currentGuess;
         }
         const nextNumber = generateRandomNumber(currentLow.current, currentHigh.current, currentGuess);
         setCurrentGuess(nextNumber);
-        setRound(currentRounds => currentRounds + 1);
+        setRound(currentRounds => currentRounds + 1); //las rondas que toma hasta llegar a adivinar
     }
 
-    useEffect(() => {
+    useEffect(() => { //esto verifica si se acertó el número y finaliza el juego
         if(currentGuess === selectedNumber) {
             onGameOver(rounds);
         }
-    }, [currentGuess, selectedNumber, onGameOver]);
+    }, [currentGuess, selectedNumber, onGameOver]); //con estas 3 condiciones entra al useEffect
 
 
     return (

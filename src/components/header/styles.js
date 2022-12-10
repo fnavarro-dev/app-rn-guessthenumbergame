@@ -1,9 +1,11 @@
-import {StyleSheet} from "react-native";
+import {StyleSheet, Dimensions} from "react-native";
+
+// const { height, width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
     container: {
         backgroundColor: 'red',
-        height: 100, //ocupa todo el espacio que tenga disponible
+        height: 100, //me da error el Dimensions, ocuparé pixel ratio 
         justifyContent: 'center',
         alignItems: 'center',
         paddingTop: 40,

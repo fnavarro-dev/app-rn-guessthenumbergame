@@ -47,42 +47,45 @@ const StartGameScreen = ({onStartGame}) => {
     ) : null;
     
     return (
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'height' : 'padding'} style={styles.containerScroll}>
     <TouchableWithoutFeedback onPress={() => {
         Keyboard.dismiss();
     }}>
-    <View style={styles.container}>
-        <Text style={styles.title}>Comenzar juego</Text>
-        <CardWrapper style={styles.inputcontainer}>
-                <Text style={styles.label}>Elige un número</Text>
-                <InputComponent 
-                style={styles.input} 
-                placeholder="0" 
-                maxLength={2}
-                keyboardType="number-pad"
-                blurOnSubmit
-                autoCapitalize="none"
-                autoCorrect={false}
-                onChangeText={onHandleChange}
-                value={number}
-                />
-            <View style={styles.buttonContainer}>
-                <Button
-                    title="Reiniciar"
-                    onPress={onHandleReset}
-                    color={colors.secondary}
+    <ScrollView style={styles.containerScroll}>
+        <View style={styles.container}>
+            <Text style={styles.title}>Comenzar juego</Text>
+            <CardWrapper style={styles.inputcontainer}>
+                    <Text style={styles.label}>Elige un número</Text>
+                    <InputComponent 
+                    style={styles.input} 
+                    placeholder="0" 
+                    maxLength={2}
+                    keyboardType="number-pad"
+                    blurOnSubmit
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    onChangeText={onHandleChange}
+                    value={number}
                     />
-                <Button
-                    title="Confirmar"
-                    onPress={onHandleConfirm}
-                    color= {colors.primary}
-                    />
+                <View style={styles.buttonContainer}>
+                    <Button
+                        title="Reiniciar"
+                        onPress={onHandleReset}
+                        color={colors.secondary}
+                        />
+                    <Button
+                        title="Confirmar"
+                        onPress={onHandleConfirm}
+                        color= {colors.primary}
+                        />
 
-            </View>
-        </CardWrapper>
-        {confirmedOutput()}
-    </View>
+                </View>
+            </CardWrapper>
+            {confirmedOutput()}
+        </View>
+    </ScrollView>
     </TouchableWithoutFeedback>
-
+    </KeyboardAvoidingView>
     );
 }
 
